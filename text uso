@@ -1,0 +1,34 @@
+1. Uso Rápido por Terminal (Consola)
+Abre tu terminal (PowerShell) y usa los comandos globales seguidos del monto total que deseas cobrar. El sistema asume que el monto ingresado ya incluye el IGV.
+
+Para generar una Boleta:
+
+PowerShell
+boleta 300
+(Genera un ticket simple mostrando únicamente el monto total).
+
+Para generar una Factura:
+
+PowerShell
+factura 300
+(Genera un ticket detallado que extrae el Subtotal y el IGV del 18% exacto).
+
+2. Uso por Navegador Web (Modo Gráfico)
+Si prefieres ver el ticket en una interfaz gráfica estilizada o necesitas que otro programa (Frontend) extraiga los datos:
+
+Paso 1: Encender el servidor
+Escribe el siguiente comando en tu terminal y presiona Enter:
+
+PowerShell
+servidor
+(No cierres esta ventana de terminal mientras estés usando la página web).
+
+Paso 2: Abrir las rutas en tu navegador
+Abre Chrome, Edge, Safari o tu navegador favorito y entra a las siguientes direcciones (puedes cambiar el número "300" al final por cualquier otro monto):
+
+Ver Ticket Gráfico (HTML):http://localhost:3000/ticket?tipo=factura&monto=300(Muestra el ticket visual listo para imprimir o capturar pantalla).
+
+Ver Datos Puros (API JSON):http://localhost:3000/api/emitir?tipo=factura&monto=300(Ideal si vas a conectar esto con una aplicación móvil o sistema de caja).
+
+Paso 3: Apagar el servidor
+Cuando termines de trabajar, ve a la ventana de la terminal donde escribiste "servidor" y presiona las teclas Ctrl + C para detenerlo.
